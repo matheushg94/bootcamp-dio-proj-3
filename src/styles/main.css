@@ -1,0 +1,64 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e3f2fd;
+}
+
+.container {
+    width: 780px;
+    border-radius: 20px;
+    padding: 2rem 3rem;
+}
+
+h1 {
+    font-size: 1.6rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.config {
+    display: flex;
+    gap: .5rem;
+}
+
+.config span {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.volume input {
+    accent-color: #fff;
+}
+
+.keyboard input {
+    width: 50px;
+    height: 30px;
+    appearance: none;
+    background-color: #4b4b4b;
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+}
+
+.keyboard input::before {
+    content: "";
+    height: 22px;
+    width: 22px;
+    position: absolute;
+    background-color: #8c8c8c;
+    border-radius: 30px;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 4px;
+    transition: all .3s ease;
+}
+
+.keyboard input:checked::before {
+    left: 24px;
+}
