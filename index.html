@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de piano</title>
+
+    <link rel="stylesheet" href="src/styles/reset.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Piano Virtual</h1>
+            <div class="config volume">
+                <span>Volume</span>
+                <input type="range" name="volume" id="volume">
+            </div>
+            <div class="config keyboard">
+                <span>Teclas</span>
+                <input type="checkbox" name="keyboard" id="keyboard" checked>
+            </div>
+        </header>
+        <!-- ul.piano-keys>(li.key>span)*16 -->
+        <ul class="piano-keys">
+            <li class="key"><span></span></li>
+            <li class="key"><span></span></li>
+            <li class="key"><span></span></li>
+            <li class="key"><span></span></li>
+            <li class="key"><span></span></li>
+            <li class="key"><span></span></li>
+            <li class="key"><span></span></li>
+            <li class="key"><span></span></li>
+            <li class="key"><span></span></li>
+            <li class="key"><span></span></li>
+            <li class="key"><span></span></li>
+            <li class="key"><span></span></li>
+            <li class="key"><span></span></li>
+            <li class="key"><span></span></li>
+            <li class="key"><span></span></li>
+            <li class="key"><span></span></li>
+        </ul>
+    </div>
+
+    <script src="src/scripts/engine.js"></script>
+</body>
+
+</html>
