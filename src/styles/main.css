@@ -4,32 +4,37 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #e3f2fd;
+    color: #fff;
 }
 
 .container {
     width: 780px;
     border-radius: 20px;
     padding: 2rem 3rem;
+    background-color: #000;
 }
 
 h1 {
     font-size: 1.6rem;
+    font-weight: 500;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #b2b2b2;
 }
 
 .config {
     display: flex;
+    align-items: center;
     gap: .5rem;
 }
 
 .config span {
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 200;
 }
 
 .volume input {
@@ -44,6 +49,7 @@ header {
     border-radius: 30px;
     cursor: pointer;
     position: relative;
+    box-shadow: inset 0px 0px 3px #000;
 }
 
 .keyboard input::before {
@@ -57,8 +63,59 @@ header {
     top: 50%;
     left: 4px;
     transition: all .3s ease;
+    box-shadow: 0px 0px 3px #000;
 }
 
 .keyboard input:checked::before {
     left: 24px;
+    background-color: #fff;
+}
+
+.piano-keys {
+    display: flex;
+    margin-top: 3rem;
+}
+
+.key {
+    cursor: pointer;
+    list-style: none;
+    color: #a2a2a2;
+    user-select: none;
+    position: relative;
+    text-transform: uppercase;
+    border: 1px solid #000;
+}
+
+.key.white {
+    width: 70px;
+    height: 230px;
+    background: linear-gradient(#fff 96%, #eee 4%);
+    border-radius: 0 0 8px 8px;
+}
+
+.key.white:active {
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2);
+    background: #eee;
+}
+
+.key.black {
+    width: 44px;
+    height: 140px;
+    z-index: 2;
+    margin: 0 -22px 0 -22px;
+    background: linear-gradient(#333, #000);
+    border-radius: 0 0 8px 8px;
+}
+
+.key.black:active {
+    box-shadow: inset 5px 5px 10px rgba(255, 255, 255, 0.1);
+    background: linear-gradient(#222, #000);
+}
+
+.piano-keys span {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.1rem;
 }
