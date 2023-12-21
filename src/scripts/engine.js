@@ -10,3 +10,7 @@ const playTune = (key) => {
     console.log(tune);
     tune.play();
 }
+
+document.addEventListener('keydown', (e) => {
+    playTune(e.key);
+});
