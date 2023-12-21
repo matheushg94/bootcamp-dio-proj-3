@@ -1,6 +1,11 @@
 const pianoKeys = document.querySelectorAll(".piano-keys .key");
-let tune = new Audio();
+const volumeSlider = document.querySelector(".volume input");
+const keyLabelInput = document.querySelector(".key-labels input");
+
 const mapedKeys = [];
+const tune = new Audio();
+
+tune.volume = '0.5';
 
 const pressKey = (key) => {
     tune.src = `src/tunes/${key}.wav`;
@@ -11,10 +16,13 @@ const pressKey = (key) => {
     setTimeout(() => pressedKey.classList.remove("active"), 150);
 }
 
-pianoKeys.forEach(key => {
-    key.addEventListener('mousedown', () => pressKey(key.dataset.key));
-    mapedKeys.push(key.dataset.key);
-});
+const handleVolume = (e) => {
+    tune.volume = e.target.value;
+}
+
+const toggleKeyLabels = () => {
+    pianoKeys.forEach(key => key.classList.toggle('hide-label'));
+}
 
 document.addEventListener('keydown', (e) => {
     /* mapedKeys.forEach(key => {
@@ -26,4 +34,13 @@ document.addEventListener('keydown', (e) => {
     if (mapedKeys.includes(e.key)) {
         pressKey(e.key);
     }
+});
+
+volumeSlider.addEventListener('input', handleVolume);
+
+keyLabelInput.addEventListener('click', toggleKeyLabels);
+
+pianoKeys.forEach(key => {
+    key.addEventListener('mousedown', () => pressKey(key.dataset.key));
+    mapedKeys.push(key.dataset.key);
 });
