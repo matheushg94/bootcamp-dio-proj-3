@@ -16,11 +16,11 @@
             <h1>Piano Virtual</h1>
             <div class="config volume">
                 <span>Volume</span>
-                <input type="range" name="volume" id="volume">
+                <input type="range" name="volume" id="volume" min="0" max="1" value="0.5" step="any">
             </div>
-            <div class="config keyboard">
+            <div class="config key-labels">
                 <span>Teclas</span>
-                <input type="checkbox" name="keyboard" id="keyboard" checked>
+                <input type="checkbox" name="key-labels" id="key-labels" checked>
             </div>
         </header>
         <!-- ul.piano-keys>(li.key>span)*16 -->
